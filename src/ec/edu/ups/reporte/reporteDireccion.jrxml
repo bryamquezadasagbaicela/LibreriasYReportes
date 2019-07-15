@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="40eb4a25-fd2a-4c0a-b2d1-81bcab004759">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="DIR_CEDULA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT *  FROM "DIRECCION"
+where "DIR_CEDULA" =$P{DIR_CEDULA}]]>
+	</queryString>
+	<field name="DIR_C_PRINCIPAL" class="java.lang.String"/>
+	<field name="DIR_C_SECUNDARIA" class="java.lang.String"/>
+	<field name="DIR_CODIGO" class="java.math.BigDecimal"/>
+	<field name="DIR_CEDULA" class="java.lang.String"/>
+	<field name="DIR_NUMERO_CASA" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="351" height="33" forecolor="#FFFFFF" backcolor="#66FFCC" uuid="55e706f7-b514-4878-9072-6c43b4ddbb04"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[REGISTRO DIRECCIONES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="39" width="288" height="22" forecolor="#FFFFFF" uuid="32708101-9b13-4146-8638-26a41b58fe1f"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[BRYAM ALEXANDER QUEZADA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="d362cfb7-9565-427d-a4c7-b6eca57dddba"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="111" height="15" uuid="89bccf1f-e43e-464e-b710-96a55f5beb0a"/>
+				<text><![CDATA[CALLE PRINCIPAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="111" y="19" width="111" height="15" uuid="d30c9b5d-b0cc-42fd-a039-af41fef62bc6"/>
+				<text><![CDATA[CALLE SECUNDARIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="222" y="19" width="111" height="15" uuid="16e95686-ef36-45d8-a627-e7f3e73cd8ee"/>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="333" y="19" width="111" height="15" uuid="3abc4642-4cdb-47ce-8f90-15796c999a92"/>
+				<text><![CDATA[CEDULA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="444" y="19" width="111" height="15" uuid="307a8fb4-a957-4522-888e-b3218a52373b"/>
+				<text><![CDATA[NUMERO CASA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="1ea41e3a-61eb-48f8-9b57-c4141a72c64e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="111" height="15" uuid="412961f5-5dd7-4caa-a6e3-eb1db5571b60"/>
+				<textFieldExpression><![CDATA[$F{DIR_C_PRINCIPAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="111" y="0" width="111" height="15" uuid="65042031-400f-4c46-a78d-9d10a196411b"/>
+				<textFieldExpression><![CDATA[$F{DIR_C_SECUNDARIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="222" y="0" width="111" height="15" uuid="98780fdb-2f01-466d-be69-4ba8c4a299ea"/>
+				<textFieldExpression><![CDATA[$F{DIR_CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="333" y="0" width="111" height="15" uuid="9c094899-3124-4892-9953-0c5d29f08f09"/>
+				<textFieldExpression><![CDATA[$F{DIR_CEDULA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="444" y="0" width="111" height="15" uuid="b5f03d6d-c916-41bd-bce8-affcc4404418"/>
+				<textFieldExpression><![CDATA[$F{DIR_NUMERO_CASA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="1fcde764-8274-47ac-9f23-f4013f5dd499"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="2ee351c1-3987-4f56-a8da-835a773924e0"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="4fdadfec-e642-423c-97d8-6334db5f9087"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="7effb410-eda7-4b1b-8739-1f8673477b1d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
